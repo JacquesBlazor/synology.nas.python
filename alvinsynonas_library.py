@@ -15,7 +15,7 @@ def get_nasconfig():
     except FileNotFoundError:
         logging.warning(r'無法找到你的 NAS 使用者帳號與密碼的設定檔: account.(txt)')
         logging.warning(r'請新增該設定檔, 位於 使用者帳號\.nas\account 格式為: { "account":"username", "password":"********", "ip":"10.0.0.100", "port":"5000" }')
-        sys.exit()
+        sys.exit(1)
     else:
         return {      
             'account': nasprofile['account'],
