@@ -17,7 +17,12 @@ That's it. Have fun using it.
     出來的應用程式界面 (API), 讓你可以執行在你的個人電腦 Windows 10 上, 或直接執行在你自己
     的 Synology DiskStation (NAS) 上. 目前有實作了下列功能: 1.登入(Initialize&Login)
     2.新增(Create)下載, 3.修改(Edit), 4.列出(List), 5.刪除(Delete), 6.資訊(GetInfo),
+    7.暫停(Pause), 8.繼續(Resume), 9.登出(Logout) 等. 還在持續修改中.
+    
     實作裡也包含了能夠建立新的資料夾以便可以利用上述功能來將下載的工作存在新的資料夾裡.
+    範例也展示了一個簡單的功能把目前下載的清單列出, 並依據下載的效率做出評比, 以利後續
+    程式可以依據評比來自動調整新增進來的工作, 例如暫停目前下載效率不佳的工作一陣子, 讓
+    其他工作可以下載, 以增進下載的整體效率. 
 
 - [x] --- English Version ---
 
@@ -26,6 +31,8 @@ That's it. Have fun using it.
     running on your own Windows 10 computer or running on the DS NAS itself. The 
     current implementation of the API includes the functionality of: 1. Initilization
     & Login. 2. CreateTask, 3. EditTask, 4. ListTask, 5. DeleteTask, 6. GetInfo.
+    7. PauseTask, 8. ResumeTask, 9. Logout. etc. It will keep improving overtime.
+    
     It also implements a function to allow users to create a new folder on the NAS
     for above downloadStation functions to work with.
 
