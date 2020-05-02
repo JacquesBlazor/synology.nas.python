@@ -8,3 +8,34 @@ To use it, you have to create a 'account' file under your ~/.nas/ folder either 
 
 That's it. Have fun using it.
 
+## amazonWebServices.ec2.python
+**AWS (Amazon Web Services) ec2 instances start and stop (running and stopping) by python**
+
+- [x] --- 繁體中文版 ---
+
+    此程的功能為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式語言所實作
+    出來的應用程式界面 (API), 讓你可以執行在你的個人電腦 Windows 10 上, 或直接執行在你自己
+    的 Synology DiskStation (NAS) 上. 目前有實作了下列功能: 1.登入(Initialize&Login)
+    2.新增(Create)下載, 3.修改(Edit), 4.列出(List), 5.刪除(Delete), 6.資訊(GetInfo),
+    實作裡也包含了能夠建立新的資料夾以便可以利用上述功能來將下載的工作存在新的資料夾裡.
+
+- [x] --- English Version ---
+
+    The program is intended to provide users who are using Synology DiskStation (NAS)
+    with a applcation programming interface (API) by using Python Language either 
+    running on your own Windows 10 computer or running on the DS NAS itself. The 
+    current implementation of the API includes the functionality of: 1. Initilization
+    & Login. 2. CreateTask, 3. EditTask, 4. ListTask, 5. DeleteTask, 6. GetInfo.
+    It also implements a function to allow users to create a new folder on the NAS
+    for above downloadStation functions to work with.
+
+    ![關機狀態](https://github.com/spectreConstantine/amazonWebServices.ec2.python/blob/master/2020-04-27_094454.png)
+
+- [x] --- 摘要說明 ---
+
+    * 此程式需有一個自己客製的文字檔的設定檔, 放在 %userprofile%\.nas\ 目錄下, 包含帳號密碼
+
+- [x] --- 執行環境需求 ---
+
+    * 跑在 Windows 裡電腦裡要安裝 Python 3.7.7 (這是我用的版本, 其他版本也許可以跑但沒實測過).
+    * 跑在 DS NAS 要安裝 Python 3.x (目前應該是 3.5, 請參考 Synology 的說明). 
