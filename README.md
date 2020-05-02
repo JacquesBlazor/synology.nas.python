@@ -22,7 +22,7 @@ That's it. Have fun using it.
 - [x] --- English Version ---
 
     The program is intended to provide users who are using Synology DiskStation (NAS)
-    with a applcation programming interface (API) by using Python Language either 
+    with a application programming interface (API) by using Python Language either 
     running on your own Windows 10 computer or running on the DS NAS itself. The 
     current implementation of the API includes the functionality of: 1. Initilization
     & Login. 2. CreateTask, 3. EditTask, 4. ListTask, 5. DeleteTask, 6. GetInfo.
