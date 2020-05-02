@@ -8,8 +8,8 @@ To use it, you have to create a 'account' file under your ~/.nas/ folder either 
 
 That's it. Have fun using it.
 
-## amazonWebServices.ec2.python
-**AWS (Amazon Web Services) ec2 instances start and stop (running and stopping) by python**
+## synology.nas.python
+**Synology DiskStation (NAS) API function implementations by python**
 
 - [x] --- 繁體中文版 ---
 
@@ -29,7 +29,7 @@ That's it. Have fun using it.
     It also implements a function to allow users to create a new folder on the NAS
     for above downloadStation functions to work with.
 
-    ![關機狀態](https://github.com/spectreConstantine/amazonWebServices.ec2.python/blob/master/2020-04-27_094454.png)
+    ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
 
 - [x] --- 摘要說明 ---
 
