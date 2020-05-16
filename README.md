@@ -40,7 +40,7 @@ That's it. Have fun using it.
 
 - [x] --- 摘要說明 ---
 
-    * 此程式需有一個自己客製的文字檔的設定檔, 放在 %userprofile%\.nas\ 目錄下, 包含帳號密碼
+    * 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 %userprofile%\.nas\ 目錄下, 包含帳號密碼
 
 - [x] --- 執行環境需求 ---
 
