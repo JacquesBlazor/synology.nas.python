@@ -233,7 +233,7 @@ class crawlerKorea():
                 casterItems_img = responsedCasterSoup.select('.pd15')
                 # ------ 驗證是否已超過當天可下載的個數
                 verifyForward = self.cc.convert(casterItems_img[0].span.text)
-                # ------ 超過時會出現: ['親，你每天可以瀏覽下載100部作品，今天已超出限制，請明天再來哦^_^'] ------
+                # ------ 超過時會出現:今天已超出限制 ------
                 if '今天已超出限制' in verifyForward:
                     logging.warning('Maximum item exceed: %s' % verifyForward)
                     break              
