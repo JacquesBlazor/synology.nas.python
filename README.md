@@ -13,17 +13,30 @@ That's it. Have fun using it.
 
 - [x] --- 繁體中文版 ---
 
-    此程的功能為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式語言所實作
-    出來的應用程式界面 (API), 讓你可以執行在你的個人電腦 Windows 10 上, 或直接執行在你自己
-    的 Synology DiskStation (NAS) 上. 目前有實作了下列功能: 1.登入(Initialize&Login)
-    2.新增(Create)下載, 3.修改(Edit), 4.列出(List), 5.刪除(Delete), 6.資訊(GetInfo),
-    7.暫停(Pause), 8.繼續(Resume), 9.登出(Logout) 等. 還在持續修改中.
-    
-    實作裡也包含了能夠建立新的資料夾以便可以利用上述功能來將下載的工作存在新的資料夾裡.
+    * 目前有兩個主程式。一個為 dailyCrawler.py，另一個為 dailyHousekeeping.py
+    * 主程式匯入了多個不同的 module，主要的兩個 module 為 myNASkoreafuncs.py 及 myNASbeautyfuncs.py。
+    * 另外也運用了 Line Notify 的 module，myNASlinefuncs.py 來做為通知用。
+    * 上述程式可能會呼叫 myNASsynofuncs.py 的功能。這程式是為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式語言所實作
+    出來的應用程式界面 (API), 讓你可以執行在你的個人電腦 Windows 10 上, 或直接執行在你自己的 Synology DiskStation (NAS) 上.    
+    * 目前有實作了下列功能: 
+    1.登入(Initialize&Login) 
+    2.新增(Create)下載, 
+    3.修改(Edit), 
+    4.列出(List), 
+    5.刪除(Delete), 
+    6.資訊(GetInfo),
+    7.暫停(Pause), 
+    8.繼續(Resume), 
+    9.登出(Logout) 等.
+    * 裡也包含了能夠建立新的資料夾以便可以利用上述功能來將下載的工作存在新的資料夾裡.
     範例也展示了一個簡單的功能把目前下載的清單列出, 並依據下載的效率做出評比, 以利後續
     程式可以依據評比來自動調整新增進來的工作, 例如暫停目前下載效率不佳的工作一陣子, 讓
     其他工作可以下載, 以增進下載的整體效率. 
 
+    * dailyCrawler.py 主要是用來爬資料和下載資料。從主程式的說明應該很容易理解。runDailyCrawler.sh 是對應的排程自訂程式
+    
+    * dailyHousekeeping.py 主要是用來定期清理已完成的下載清單。程式很短也應該很容易理解。runDailyHousekeeping.sh 是對應的排程自訂程式
+    
 - [x] --- English Version ---
 
     The program is intended to provide users who are using Synology DiskStation (NAS)
@@ -40,9 +53,14 @@ That's it. Have fun using it.
 
 - [x] --- 摘要說明 ---
 
-    * 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 %userprofile%/.nas/ 目錄下, 包含帳號密碼
+    * 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 home/.nas/ 目錄下, 包含帳號密碼  
+    * 使用 Line Module 要有一個 token file, 放在 home/.line/ 目錄下, 包含 line token
+    * 使用 Korea Module 要有一個 帳號密碼 檔案, 放在 home/.korea/ 目錄下, 包含帳號密碼的 pickle
+    * 在 home/.log/ 目錄用來放所有的記錄檔
+    * 在 home/.scheduler/ 目錄用來放所抓的資料, 每個 module 有一固子資料夾對應 module 的 .name
 
 - [x] --- 執行環境需求 ---
 
-    * 跑在 Windows 裡電腦裡要安裝 Python 3.7.7 (這是我用的版本, 其他版本也許可以跑但沒實測過).
-    * 跑在 DS NAS 要安裝 Python 3.x (目前應該是 3.5, 請參考 Synology 的說明). 
+    * 所有的程式是設計跑在 Synology NAS 的控制台裡新增自訂排程，然後放入自訂的 .sh 做為程式的起始。
+    * Synology 的 NAS 要安裝 Python3 的套件和 Download Station 的套件。目前的 Python 版本是 3.5, 請參考 Synology 的說明
+    * 跑在 Windows 裡版本安裝 Python 3.7.7 (這是我用的版本, 其他版本也許可以跑但沒實測過).
