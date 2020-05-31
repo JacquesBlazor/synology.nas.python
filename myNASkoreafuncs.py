@@ -15,11 +15,11 @@ import re
 class crawlerKorea():
     def __init__(self):
         # ------ 常變數設定 --------------------------
-        self.name = 'korea19j2020'
+        self.name = 'korea'
         self.userbaseDir = os.path.expanduser('~')        
         self.storageData = '%s/%s/%s' % ('.scheduler', 'crawlerdata', self.name)
         self.storageDownload = '%s/%s/%s' % ('.scheduler', 'downloads', self.name)
-        self.appScheme = 'https://www.19j2020.com'
+        self.appScheme = 'https://www.korea.com'
         self.accumulatedCaster = []        
         self.cookies = {
             'txbrowse_10535': '10535',
@@ -80,9 +80,9 @@ class crawlerKorea():
             'Accept-Language': 'zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'Origin': 'https://www.19j2020.com',
+            'Origin': 'https://www.korea.com',
             'Connection': 'keep-alive',
-            'Referer': 'https://www.19j2020.com/?login',
+            'Referer': 'https://www.korea.com/?login',
             'TE': 'Trailers',
             }
         self.cc = OpenCC('s2twp')  #cc = opencc.Converter(from_variant='cn', to_variant='twp')    
@@ -108,7 +108,7 @@ class crawlerKorea():
                 logging.error('=== 讀取網站帳號密碼檔錯誤, 失敗原因: %s ===' % str(e))
         # ------ 定義登入圖影像網站函式 --------------------------          
         with requests.Session() as session:  
-            login_url = 'https://www.19j2020.com/zb_users/plugin/tx_reg/login.php'
+            login_url = 'https://www.korea.com/zb_users/plugin/tx_reg/login.php'
             getLoginCredential()
             if self.params:
                 responsedLogin = session.post(login_url, data=self.params, headers=self.headers, cookies=self.cookies)
