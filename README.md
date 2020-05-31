@@ -13,6 +13,7 @@ That's it. Have fun using it.
 
 - [x] --- 繁體中文版 ---
 
+    * 所有的程式是設計跑在 Synology NAS 的控制台裡，新增自訂排程，選定時間，然後放入自訂的 .sh，讓程式自動依時間由 NAS 執行。
     * 目前有兩個主程式。一個為 dailyCrawler.py，另一個為 dailyHousekeeping.py
     * 主程式匯入了多個不同的 module，主要的兩個 module 為 myNASkoreafuncs.py 及 myNASbeautyfuncs.py。
     * 另外也運用了 Line Notify 的 module，myNASlinefuncs.py 來做為通知用。
