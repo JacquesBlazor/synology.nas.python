@@ -51,16 +51,13 @@ That's it. Have fun using it.
 
     ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
 
-- [x] --- 摘要說明 ---
+- [x] --- 執行環境需求 ---
 
     * 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 home/.nas/ 目錄下, 包含帳號密碼  
     * 使用 Line Module 要有一個 token file, 放在 home/.line/ 目錄下, 包含 line token
     * 使用 Korea Module 要有一個 帳號密碼 檔案, 放在 home/.korea/ 目錄下, 包含帳號密碼的 pickle
     * 在 home/.log/ 目錄用來放所有的記錄檔
     * 在 home/.scheduler/ 目錄用來放所抓的資料, 每個 module 有一固子資料夾對應 module 的 .name
-
-- [x] --- 執行環境需求 ---
-
     * 所有的程式是設計跑在 Synology NAS 的控制台裡新增自訂排程，然後放入自訂的 .sh 做為程式的起始。
     * Synology 的 NAS 要安裝 Python3 的套件和 Download Station 的套件。目前的 Python 版本是 3.5, 請參考 Synology 的說明
     * 跑在 Windows 裡版本安裝 Python 3.7.7 (這是我用的版本, 其他版本也許可以跑但沒實測過).
