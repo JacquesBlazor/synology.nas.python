@@ -14,8 +14,8 @@ import re
 class crawlerKorea():
     def __init__(self):
         # ------ 常變數設定 --------------------------
-        self.name = 'korea19j2020'
-        self.appScheme = 'https://www.19j2020.com'             
+        self.name = 'korea'
+        self.appScheme = 'https://www.korea.com'             
         self.cookies = {
             'txbrowse_10535': '10535',
             'txbrowse_12126': '12126',
@@ -75,9 +75,9 @@ class crawlerKorea():
             'Accept-Language': 'zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'X-Requested-With': 'XMLHttpRequest',
-            'Origin': 'https://www.19j2020.com',
+            'Origin': 'https://www.korea.com',
             'Connection': 'keep-alive',
-            'Referer': 'https://www.19j2020.com/?login',
+            'Referer': 'https://www.korea.com/?login',
             'TE': 'Trailers',
             }
         self.timeFreeze = datetime.now()   
@@ -107,7 +107,7 @@ class crawlerKorea():
                 logging.error('=== 讀取網站帳號密碼檔錯誤, 失敗原因: %s ===' % str(e))
         # ------ 定義登入圖影像網站函式 --------------------------          
         with requests.Session() as session:  
-            login_url = 'https://www.19j2020.com/zb_users/plugin/tx_reg/login.php'
+            login_url = 'https://www.korea.com/zb_users/plugin/tx_reg/login.php'
             getLoginCredential()
             if self.params:
                 responsedLogin = session.post(login_url, data=self.params, headers=self.headers, cookies=self.cookies)
@@ -232,7 +232,7 @@ class crawlerKorea():
                 casterItems_img = responsedCasterSoup.select('.pd15')
                 # ------ 驗證是否已超過當天可下載的個數
                 verifyForward = self.cc.convert(casterItems_img[0].span.text)
-                # ------ 超過時會出現: ['親，你每天可以瀏覽下載100部作品，今天已超出限制，請明天再來哦^_^'] ------
+                # ------ 超過時會出現: ['今天已超出限制'] ------
                 if '今天已超出限制' in verifyForward:
                     logging.warning('Maximum item exceed: %s' % verifyForward)
                     break              
