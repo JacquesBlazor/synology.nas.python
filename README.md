@@ -29,14 +29,14 @@
 >-  8.移除(remove)
 >-  9.篩選(filter)
 
-    ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
+![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
 
-- [x] --- 執行環境需求 ---
+-[x] 執行環境需求 
 
-    * 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 ~/.nas/ 目錄下, 包含帳號密碼  
-    * 使用 Line Module 要有一個 token file, 放在 ~/.line/ 目錄下, 包含 line token
-    * 使用 Korea Module 要有一個 帳號密碼 檔案, 放在 ~/.korea/ 目錄下, 包含帳號密碼的 pickle
-    * 在 ~/.log/ 目錄用來放所有的記錄檔
-    * 在 ~/.scheduler/ 目錄用來放所抓的資料, 每個 module 有一個子資料夾對應 module 的 .name
-    * Synology 的 NAS 要安裝 Python3 的套件和 Download Station 的套件。目前的 Python 版本是 3.5, 請參考 Synology 的說明.
-    * 也能跑在 Windows 下。則上述 ~ 就自動對應到 %userprofile% 目錄。我用的版本版為 Python 3.7.7, 其他版本沒實測過.
+>- 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 ~/.nas/ 目錄下, 包含帳號密碼  
+>- 使用 Line Module 要有一個 token file, 放在 ~/.line/ 目錄下, 包含 line token
+>- 使用 Korea Module 要有一個 帳號密碼 檔案, 放在 ~/.korea/ 目錄下, 包含帳號密碼的 pickle
+>- 在 ~/.log/ 目錄用來放所有的記錄檔
+>- 在 ~/.scheduler/ 目錄用來放所抓的資料, 每個 module 有一個子資料夾對應 module 的 .name
+>- Synology 的 NAS 要安裝 Python3 的套件和 Download Station 的套件。目前的 Python 版本是 3.5, 請參考 Synology 的說明.
+>- 也能跑在 Windows 下。則上述 ~ 就自動對應到 %userprofile% 目錄。我用的版本版為 Python 3.7.7, 其他版本沒實測過.
