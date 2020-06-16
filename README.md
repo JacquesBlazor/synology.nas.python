@@ -36,6 +36,7 @@
 >-  8.移除(remove)
 >-  9.篩選(filter)
 
+![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-16_234131.png)
 ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
 
 #### 執行環境需求 
