@@ -54,21 +54,21 @@
 >- 由於程式執行過程難免因各種原因中斷，如程式錯誤，網路斷線，網站意外關機等。因此程式改用 .config 的檔案來控制哪一段程式需不需要執行。
 >- 這樣可以只修改設定檔而避免因修改更改程式導致其他未知的問題，同時可以保留多個不同的設定檔案以因應不同的狀況。
 ```
-{ 
->   "myKoreaCrawler": 1, 
->   "myKoreaCrawlerSession": 1, 
->   "myKoreaCrawlerGetJust": 0,
->   "myKoreaCrawlerGetLast": 1, 
->   "myKoreaCrawlerRecovery": 1,
->   "myKoreaCrawlerInitialize": 1,
->   "myKoreaCrawlerStartStop": 1,
->   "myKoreaCrawlerStartCrawl": 1,  
->   "pttBeautyCrawler": 1, 
->   "pttBeautyCrawlerGetJust": 0,
->   "pttBeautyCrawlerInitialize": 1,
->   "pttBeautyCrawlerStartCrawl": 1,      
->   "ds214se": 1, 
->   "ds214seDownloaMyKorea": 1, 
->   "ds214seDownloaPttBeauty": 1
-> }
+ { 
+   "myKoreaCrawler": 1, 
+   "myKoreaCrawlerSession": 1, 
+   "myKoreaCrawlerGetJust": 0,
+   "myKoreaCrawlerGetLast": 1, 
+   "myKoreaCrawlerRecovery": 1,
+   "myKoreaCrawlerInitialize": 1,
+   "myKoreaCrawlerStartStop": 1,
+   "myKoreaCrawlerStartCrawl": 1,  
+   "pttBeautyCrawler": 1, 
+   "pttBeautyCrawlerGetJust": 0,
+   "pttBeautyCrawlerInitialize": 1,
+   "pttBeautyCrawlerStartCrawl": 1,      
+   "ds214se": 1, 
+   "ds214seDownloaMyKorea": 1, 
+   "ds214seDownloaPttBeauty": 1
+ }
 ```
