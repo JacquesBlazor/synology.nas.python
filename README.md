@@ -19,15 +19,15 @@
  
  1. FileStation: 檔案資料夾的新增 (create) 作業 
  2. DownloadStation: 網站資料的下載 (create) 作業以及其他如:
->  1.新增(Create)下載
->  2.修改(Edit)
->  3.列出(List)
->  4.刪除(Delete)
->  5.資訊(GetInfo)
->  6.暫停(Pause)
->  7.繼續(Resume)
->  8.移除(remove)
->  9.篩選(filter)
+>-  1.新增(Create)下載
+>-  2.修改(Edit)
+>-  3.列出(List)
+>-  4.刪除(Delete)
+>-  5.資訊(GetInfo)
+>-  6.暫停(Pause)
+>-  7.繼續(Resume)
+>-  8.移除(remove)
+>-  9.篩選(filter)
 
     ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
 
