@@ -31,7 +31,7 @@
 
 ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
 
-- [x] 執行環境需求 
+#### 執行環境需求 
 
 >- 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 ~/.nas/ 目錄下, 包含帳號密碼  
 >- 使用 Line Module 要有一個 token file, 放在 ~/.line/ 目錄下, 包含 line token
