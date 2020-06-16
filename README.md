@@ -1,9 +1,9 @@
 ## synology.nas.python
 ### Synology DiskStation (NAS) 的 Python 應用
  
-> 所有的程式是設計跑在 Synology NAS 的控制台裡的自訂排程。新增自訂排程後，選定時間，然後放入自訂的 .sh 檔案，讓程式自動依時間由 NAS 執行。
-> 目前有三個主程式。一個為 dailyCrawler.py，一個為 dailyHousekeeping.py，最後一個為 dailyMaintainance.py。
-> 同時也運用了 Line Notify 的 module 模組 myNASlinefuncs.py 來做為通知用。
+ 所有的程式是設計跑在 Synology NAS 的控制台裡的自訂排程。新增自訂排程後，選定時間，然後放入自訂的 .sh 檔案，讓程式自動依時間由 NAS 執行。
+ 目前有三個主程式。一個為 dailyCrawler.py，一個為 dailyHousekeeping.py，最後一個為 dailyMaintainance.py。
+ 同時也運用了 Line Notify 的 module 模組 myNASlinefuncs.py 來做為通知用。
 #### 1. dailyCrawler.py` 
 * 主要是用來爬資料和下載資料。從主程式的說明應該很容易理解。runDailyCrawler.sh 是對應的排程自訂程式
 * 程式中匯入了多個不同的 module 模組，主要的兩個 module 模組為 myNASkoreafuncs.py 及 myNASbeautyfuncs.py。
