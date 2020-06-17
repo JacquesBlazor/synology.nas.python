@@ -17,7 +17,9 @@
 2. dailyHousekeeping.py
   > 主要是用來定期清理已完成的下載清單。程式很短也應該很容易理解。runDailyHousekeeping.sh 是對應的排程自訂程式
 3. dailyMaintainance.py 
-  >  主要是用來計算目前可用的儲存空間的容量。程式很短也應該很容易理解。runDailyMaintainance.sh 是對應的排程自訂程式
+  >  主要是用來定期清理特定旳資料夾下超過21天的資料並計算剩餘的目前可用的儲存空間的容量。runDailyMaintainance.sh 是對應的排程自訂程式。
+  >  程式只用了 <https://github.com/N4S4/synology-api> 的模組的 SysInfo 的 Storage 的功能。
+  >  未來可能會自己實作在我自己的 `myNASsynofuncs.py`。其實應該只需要加幾行 code 但我有點懶得再改了。
 
 #### 有一個主要的 NAS 模組 myNASsynofuncs.py
  上述的程式可能會呼叫另一個 myNASsynofuncs.py 模組的功能。這個模組是為提供使用 Synology DiskStation (NAS) 的使用者一個
@@ -73,3 +75,9 @@
    "ds214seDownloaPttBeauty": 1
  }
 ```
+
+#### 撰寫心得
+
+>- 這整套程式雖然只是運用 Python 下載一些資料，從第一個版本由網站上下載 (感謝 scku深紅/scku208@gmail.com) 的原始碼，從中學習瞭解別人的程式 )，
+>- 到自己研究如何運用 Synology 的 WebAPI，到優化整個模組間的相互運作，到完全能自己掌握程式的風格、調性、模組間的協同合作、類別的建立與使用，
+>- 程式除錯等等，實值上算是我在學習 Python 過程中一個練習。中間反覆改了大概有20幾個版本，每天都在嘗試做不同的優化。是個很累但很有收獲的過程。
