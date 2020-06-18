@@ -59,8 +59,9 @@
 >- 在 ~/.scheduler/ 目錄用來放所抓的資料, 每個 module 有一個子資料夾對應 module 的 .name
 >- Synology 的 NAS 要安裝 Python3 的套件和 Download Station 的套件。目前的 Python 版本是 3.5, 請參考 Synology 的說明.
 >- 也能跑在 Windows 下。則上述 ~ 在 Windows 就會自動對應到 %userprofile% 目錄。我用的版本版為 Python 3.7.7, 其他版本沒實測過.
+>- 最後有一個流程控制設定檔`dailyCrawlClean.config`詳細說明如后.
 
-#### 執行流程控制設定檔
+#### 執行流程控制設定檔`dailyCrawlClean.config`
 
 >- 由於程式執行過程難免因各種原因中斷，如程式錯誤，網路斷線，網站意外關機等。因此程式改用`dailyCrawlClean.config`的檔案來控制哪一段程式需不需要執行。
 >- 這樣可以只修改設定檔而避免因修改更改程式導致其他未知的問題，同時可以保留多個不同的設定檔案以因應不同的狀況。
