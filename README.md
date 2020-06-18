@@ -40,10 +40,14 @@
   > 主要是用來定期清理已完成的下載清單。程式很短也應該很容易理解。runDailyHousekeeping.sh 是對應的排程自訂程式
 
 #### 畫面示例
+`爬蟲與下載`
 ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-16_234131.png)
 
 `checkNASdownload.py`
 ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-18_131617.png)
+
+`檢查空間並移除舊的檔案`
+![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-18_141805.png)
 
 #### 執行環境需求 
 
