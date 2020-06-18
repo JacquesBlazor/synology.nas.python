@@ -22,17 +22,17 @@
     >>     這個 myNASsynofuncs.py 模組的功能是為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式 語言
     >>     透過 Synology 官方提供的應用程式界面 (API) 來自動在 Synology DiskStation (NAS) 上完成新增資料夾、 下載檔案等作業。
     >>     其中主要有兩個功能:
-        1. FileStation: 檔案資料夾的新增 (create) 作業 
-        2. DownloadStation: 網站資料的下載 (create) 作業以及其他如:
-        >-  1.新增(Create)下載
-        >-  2.修改(Edit)
-        >-  3.列出(List)
-        >-  4.刪除(Delete)
-        >-  5.資訊(GetInfo)
-        >-  6.暫停(Pause)
-        >-  7.繼續(Resume)
-        >-  8.移除(remove)
-        >-  9.篩選(filter)
+1. FileStation: 檔案資料夾的新增 (create) 作業 
+2. DownloadStation: 網站資料的下載 (create) 作業以及其他如:
+>-  1.新增(Create)下載
+>-  2.修改(Edit)
+>-  3.列出(List)
+>-  4.刪除(Delete)
+>-  5.資訊(GetInfo)
+>-  6.暫停(Pause)
+>-  7.繼續(Resume)
+>-  8.移除(remove)
+>-  9.篩選(filter)
 
 ##### 2. `dailyHousekeeping.py`
   > 主要是用來定期清理已完成的下載清單。程式很短也應該很容易理解。runDailyHousekeeping.sh 是對應的排程自訂程式
