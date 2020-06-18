@@ -17,7 +17,7 @@
 >     用來下載 ptt 表特板 Beauty 的資料
 >4. `myNAScleanfuncs.py`
 >     主要用來定期清理特定旳資料夾下超過21天的資料並計算剩餘可用的儲存空間容量。
->5. `myNASsynofuncs.py` 用來下載資料
+>5. `myNASsynofuncs.py` 
 >     這個 myNASsynofuncs.py 模組的功能是為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式 語言
 >     透過 Synology 官方提供的應用程式界面 (API) 來自動在 Synology DiskStation (NAS) 上完成新增資料夾、 下載檔案等作業。    
 >6. 其中主要有三個功能:
