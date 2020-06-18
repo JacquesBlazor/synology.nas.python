@@ -11,16 +11,16 @@
 > 程式中匯入了多個不同的 module 模組，分別說明如下:
 >1. `myNASlinefuncs.py` 
 >     同時運用了 Line Notify 和 Python 的 Logging 來做為記錄與通知 module 模組用
->1. `myNASkoreafuncs.py`
+>2. `myNASkoreafuncs.py`
 >     用來下載 korea 網址的資料
->2. `myNASbeautyfuncs.py` 
+>3. `myNASbeautyfuncs.py` 
 >     用來下載 ptt 表特板 Beauty 的資料
->3. `myNAScleanfuncs.py`
+>4. `myNAScleanfuncs.py`
 >     主要用來定期清理特定旳資料夾下超過21天的資料並計算剩餘可用的儲存空間容量。
->4. `myNASsynofuncs.py` 用來下載資料
+>5. `myNASsynofuncs.py` 用來下載資料
 >     這個 myNASsynofuncs.py 模組的功能是為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式 語言
 >     透過 Synology 官方提供的應用程式界面 (API) 來自動在 Synology DiskStation (NAS) 上完成新增資料夾、 下載檔案等作業。    
->其中主要有三個功能:
+>6. 其中主要有三個功能:
 1. Storage: 提供 NAS 系統儲存空間的 (load_info)/(get_usage) 作業
 >-  主要用來取得目前可用的空間及空間使用率
 2. FileStation: 檔案資料夾的新增 (create) 作業
