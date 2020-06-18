@@ -94,3 +94,6 @@
 > 到自己研究如何運用 Synology 的 WebAPI，到優化整個模組間的相互運作，到完全能自己掌握程式的風格、調性、模組間的協同合作、類別的建立與使用，
 > 程式除錯等等，實值上算是我在學習 Python 過程中一個練習。中間反覆改了大概有20幾個版本，每天都在嘗試做不同的優化。是個很累但很有收獲的過程。
 > 另一個值得參考的套件也提供大家參考 <https://github.com/N4S4/synology-api>。雖然他的套件很完整，但我自己的已經寫完了，沒有再使用他的。
+
+#### 授權 License 內容
+![授權內容](https://github.com/spectreConstantine/synology.nas.python/blob/master/LICENSE)
