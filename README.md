@@ -8,7 +8,7 @@
 
 ##### 1.`dailyCrawlerCleansing.py` 
 > 主要是用來爬資料和下載資料。從主程式的說明應該很容易理解。runDailyCrawler.sh 是對應的排程自訂程式 
-> 程式中匯入了多個不同的 module 模組，主要的兩個 module 模組為 `myNASkoreafuncs.py` 及 `myNASbeautyfuncs.py`。說明如下:
+> 程式中匯入了多個不同的 module 模組，分別說明如下:
 >1. `myNASlinefuncs.py` 
 >     同時運用了 Line Notify 和 Python 的 Logging 來做為記錄與通知 module 模組用
 >1. `myNASkoreafuncs.py`
@@ -16,7 +16,7 @@
 >2. `myNASbeautyfuncs.py` 
 >     用來下載 ptt 表特板 Beauty 的資料
 >3. `myNAScleanfuncs.py`
->     主要是用來定期清理特定旳資料夾下超過21天的資料並計算剩餘的目前可用的儲存空間的容量。
+>     主要用來定期清理特定旳資料夾下超過21天的資料並計算剩餘可用的儲存空間容量。
 >4. `myNASsynofuncs.py` 用來下載資料
 >     這個 myNASsynofuncs.py 模組的功能是為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式 語言
 >     透過 Synology 官方提供的應用程式界面 (API) 來自動在 Synology DiskStation (NAS) 上完成新增資料夾、 下載檔案等作業。    
