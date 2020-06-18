@@ -21,7 +21,7 @@
 >     這個 myNASsynofuncs.py 模組的功能是為提供使用 Synology DiskStation (NAS) 的使用者一個由 Python 程式 語言
 >     透過 Synology 官方提供的應用程式界面 (API) 來自動在 Synology DiskStation (NAS) 上完成新增資料夾、 下載檔案等作業。
 
-其中主要有三個功能:
+其中`myNASsynofuncs.py`主要有三個功能:
 1. Storage: 提供 NAS 系統儲存空間的 (load_info)/(get_usage) 作業
 >-  主要用來取得目前可用的空間及空間使用率
 2. FileStation: 檔案資料夾的新增 (create) 作業
