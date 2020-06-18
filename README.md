@@ -41,6 +41,7 @@
 
 ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-16_234131.png)
 ![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-05-02_032250.png)
+![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-18_131617.png)
 
 #### 執行環境需求 
 
