@@ -6,12 +6,11 @@
 #### 目前有二個主程式
 主要程式為 `dailyCrawlerCleansing.py`，另一個比較小為 `dailyHousekeeping.py`。
 
-#### 有一個記錄與通知程式
-遇有一個 `myNASlinefuncs.py` 同時運用了 Line Notify 和 Python 的 Logging 來做為記錄與通知 module 模組用。
-
 ##### 1.`dailyCrawlerCleansing.py` 
 > 主要是用來爬資料和下載資料。從主程式的說明應該很容易理解。runDailyCrawler.sh 是對應的排程自訂程式 
-> 程式中匯入了多個不同的 module 模組，主要的兩個 module 模組為 myNASkoreafuncs.py 及 myNASbeautyfuncs.py。
+> 程式中匯入了多個不同的 module 模組，主要的兩個 module 模組為 `myNASkoreafuncs.py` 及 `myNASbeautyfuncs.py`。說明如下:
+>1. `myNASlinefuncs.py` 
+>     同時運用了 Line Notify 和 Python 的 Logging 來做為記錄與通知 module 模組用
 >1. `myNASkoreafuncs.py`
 >     用來下載 korea 網址的資料
 >2. `myNASbeautyfuncs.py` 
