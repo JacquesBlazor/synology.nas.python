@@ -7,7 +7,7 @@
 主要程式為 `dailyCrawlerCleansing.py`，另一個比較小為 `dailyHousekeeping.py`。
 
 ##### 1.`dailyCrawlerCleansing.py` 
-> 主要是用來爬資料和下載資料。從主程式的說明應該很容易理解。runDailyCrawler.sh 是對應的排程自訂程式 
+> 主要是用來爬資料和下載資料。從主程式的說明應該很容易理解。`runDailyCrawlerCleansing.sh` 是對應的排程自訂程式 
 > 程式中匯入了多個不同的 module 模組，分別說明如下:
 >1. `myNASlinefuncs.py` 
 >     同時運用了 Line Notify 和 Python 的 Logging 來做為記錄與通知 module 模組用
