@@ -1,4 +1,4 @@
-# --- The MIT License (MIT) Copyright (c) alvinconstantine(alvin.constantine@outlook.com), Tue Jun 17 08:33:00pm 2020 ---
+# --- The MIT License (MIT) Copyright (c) alvinconstantine(alvin.constantine@outlook.com), Tue Jun 18 08:54:00am 2020 ---
 from requests.compat import urljoin
 from datetime import datetime
 import requests
@@ -24,14 +24,14 @@ class nasDiskStation:
             self.account = nasConfig['account'] if nasConfig['account'] else None
             self.password = nasConfig['password'] if nasConfig['password'] else None                
             self.base_dir = '/home'
-            self.base_url = 'http://{}:{}/webapi/'.format(self.ip, self.port)
+            self.base_url = 'http://{i}:{p}/webapi/'.format(i=self.ip, p=self.port)
             self.auth_url = urljoin(self.base_url, 'auth.cgi')
             self.auth_params = {
                 'api': 'SYNO.API.Auth',
                 'version': '6',
                 'method': self.method,
                 'account': self.account,
-                'passwd': self.password ,
+                'passwd': self.password,
                 'session': self.name,
                 'format': 'sid'
                 }            
@@ -82,7 +82,7 @@ class nasDiskStation:
     def logout(self):
         self.name =  'DiskStation'
         self.method = 'logout'        
-        self.base_url = 'http://{}:{}/webapi/'.format(self.ip, self.port)
+        self.base_url = 'http://{i}:{p}/webapi/'.format(i=self.ip, p=self.port)
         self.auth_url = urljoin(self.base_url, 'auth.cgi')
         self.auth_params = {
             'api': 'SYNO.API.Auth',
@@ -102,6 +102,50 @@ class nasDiskStation:
                 errorCode = response['error']['code']
                 logging.error('=== 執行 %s 的 %s 作業時發生錯誤: %s ===' % (self.name, self.task_params['method'], self.errMapping[str(errorCode)]))             
             return response['success']  
+
+# ------ 建立 NAS 中的 Storage 方法 -------------------------------
+    def Storage(self, method, **kwargs):
+        self.name = 'Storage'        
+        if isinstance(method, str) and method.lower() in ('load_info', 'get_usage'):
+            self.method = method.lower()
+            logging.debug('=== 開始執行: %s, %s 作業 ===' % (self.name, self.method))
+        else:
+            logging.error('=== 此 %s 中沒有指定的 %s 作業方法 ===' % (self.name, str(method)))
+            return False
+        # ------ 建立 NAS 中 Storage 的 load_info 方法 -------------------------------    
+        if self.method == 'load_info':
+                self.getstg_url = urljoin(self.base_url, 'entry.cgi')
+                self.getstg_params = {
+                    'api': 'SYNO.{n}.{m}'.format(n=self.name, m='CGI.Storage'),
+                    'version': '1',
+                    'method': self.method,
+                    '_sid': self.sid,
+                    }            
+                logging.debug('=== 正在執行: %s, %s 作業 ===' % (self.name, self.method))
+                logging.debug('=== 參數: %s, %s ===' % (str(self.getstg_url), str(self.getstg_params)))
+                try:              
+                    response = requests.get(self.getstg_url, params=self.getstg_params).json()
+                except TimeoutError:
+                    logging.error('=== 連線的主機 %s:%d 沒有回應，連線嘗試失敗 ===' % (self.ip, self.port))
+                    return False
+                else:
+                    if not response['success']:
+                        errorCode = response['error']['code']
+                        logging.error('=== 執行 %s 的 %s 作業時發生錯誤: %s ===' % (self.name, self.task_params['method'], self.errMapping[str(errorCode)]))             
+                    return response['data']
+        # ------ 建立 NAS 中 Storage 的 get_usage 方法 -------------------------------           
+        elif self.method == 'get_usage':
+            # --- 這方法會利用原來的 Storage 的 load_info 方法來取得磁碟空間大小 ----------------------------- 
+            getstoragesize = self.Storage('load_info')
+            if getstoragesize:
+                totalsize = round(int(getstoragesize['volumes'][0]['size']['total']) /1024 /1024 /1024, 1)
+                usedsize = round(int(getstoragesize['volumes'][0]['size']['used']) /1024 /1024 /1024, 1)
+                lefsize = round(totalsize - usedsize, 1)
+                ratio = round(usedsize / totalsize * 100, 1)
+                returnStoragesize = '儲存空間總容量: %.1f GB, 已使用容量: %.1f GB, 剩餘可用容量: %.1f GB, 使用率 %.1f%%' % (totalsize, usedsize, lefsize, ratio)
+                return returnStoragesize
+            else:
+                return False
 
 # ------ 建立 NAS 中 FileStation 的 createFolder 方法 -------------------------------
     def FileStation(self, method, **kwargs):
@@ -230,7 +274,7 @@ class nasDiskStation:
         # ------ 建立 NAS 中 DownloadStation 的 list, create, edit, getinfo, delete, resume 方法  -----------------------------
         elif self.method in ('list', 'create', 'edit', 'getinfo', 'delete', 'resume'):
             self.task_url = urljoin(self.base_url, self.name + '/task.cgi')        
-            self.path = r'{}/{}'.format(self.base_dir, self.folder) if self.folder else ''
+            self.path = '{b}/{f}'.format(b=self.base_dir, f=self.folder) if self.folder else ''
             self.task_params = {
                 'api': 'SYNO.{n}.{m}'.format(n=self.name, m='Task'),
                 'version': '3',
@@ -255,7 +299,7 @@ class nasDiskStation:
                     paramKey = 'id'                
                     if self.method == 'create':
                         paramKey = 'uri'                     
-                        self.path = r'{}/{}'.format(self.base_dir, self.folder) if self.folder else ''
+                        self.path = '{b}/{f}'.format(b=self.base_dir, f=self.folder) if self.folder else ''
                         self.task_params[paramKey] = taskUris
                         self.task_params['destination'] = self.path.lstrip('/') if self.path else None                  
                     elif self.method == 'edit':               
@@ -275,7 +319,7 @@ class nasDiskStation:
             for itemIndex in range(uriLoops):
                 if data:
                     self.task_params[paramKey] = taskUris[:taskUris[:taskUris.find(',', uriMaxlength)].rfind(',')] if len(taskUris) > uriMaxlength else taskUris
-                    logging.info('=== 正在執行: %s, %s 作業，參數為 %s, 筆數為 %d ===' % (self.name, self.method, paramKey, len(self.task_params[paramKey])))               
+                    logging.debug('=== 正在執行: %s, %s 作業，參數為 %s, 長度為 %d ===' % (self.name, self.method, paramKey, len(self.task_params[paramKey])))               
                 logging.debug('=== 參數: %s, %s ===' % (str(self.task_url), str(self.task_params)))
                 try:           
                     response = requests.get(self.task_url, params=self.task_params).json()
