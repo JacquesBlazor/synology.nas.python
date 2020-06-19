@@ -78,7 +78,7 @@ class nasDiskStation:
                     '408' : '檔案不存在_(408)'             
                     }
 
-# ------ 建立 NAS 中 DownloadStation 的 createTask 方法 -----------------------------
+# ------ 建立 NAS 中 DiskStation 的 logout 方法 -----------------------------
     def logout(self):
         self.name =  'DiskStation'
         self.method = 'logout'        
