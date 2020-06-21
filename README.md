@@ -1,5 +1,5 @@
 ## synology.nas.python
-### Synology DiskStation (NAS) 的 Python 應用
+### Python 在 Synology DiskStation (NAS) 的應用
  
  所有的程式是設計跑在 Synology NAS 的控制台裡的自訂排程。新增自訂排程後，選定時間，然後放入自訂的 .sh 檔案，讓程式自動依時間由 NAS 執行。
  
