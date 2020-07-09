@@ -36,12 +36,23 @@ if __name__ == '__main__':
         myLineNotificator.sendMessage('已開始[%s]作業' % myKoreaCrawler.name) 
     # --- 取得 getLoginCredential 登入網站並取得 Session -----------------------------
     if dailyCrawlerCleansingConfig['myKoreaCrawlerSession']:
-        myKoreaCrawler.session = myKoreaCrawler.getLoginSession()                   
-        if myKoreaCrawler.session:
-            myLineNotificator.sendMessage('已啟始[%s]並登入網站，開始擷取資料' % myKoreaCrawler.name)   
+        try:
+            myKoreaCrawler.session = myKoreaCrawler.getLoginSession()
+        except Exception as e:
+            myLineNotificator.sendMessage('嘗試連線 %s 發生錯誤: %s' % (myKoreaCrawler.appScheme, e))
+            dailyCrawlerCleansingConfig['myKoreaCrawlerGetJust'] = 0
+            dailyCrawlerCleansingConfig['myKoreaCrawlerGetLast'] = 0 
+            dailyCrawlerCleansingConfig['myKoreaCrawlerRecovery'] = 0
+            dailyCrawlerCleansingConfig['myKoreaCrawlerInitialize'] = 0
+            dailyCrawlerCleansingConfig['myKoreaCrawlerStartStop'] = 0
+            dailyCrawlerCleansingConfig['myKoreaCrawlerStartCrawl'] = 0
+            dailyCrawlerCleansingConfig['ds214seDownloadMyKorea'] = 0 
         else:
-            myLineNotificator.sendMessage('建立[%s]的連線時發生未預期的錯誤' % myKoreaCrawler.name)        
-            sys.exit(1)
+            if myKoreaCrawler.session:
+                myLineNotificator.sendMessage('已啟始[%s]並登入網站，開始擷取資料' % myKoreaCrawler.name)   
+            else:
+                myLineNotificator.sendMessage('建立[%s]的連線時發生未預期的錯誤' % myKoreaCrawler.name)        
+                sys.exit(1)
     # === 特殊情況 === 直接讀入今天已完成的資料檔, 然後確定起始/結束序號 -----------------------------
     if dailyCrawlerCleansingConfig['myKoreaCrawlerGetJust']:    
         if myKoreaCrawler.getJustSequencedCaster():
