@@ -40,16 +40,6 @@
 ##### 2. `dailyHousekeeping.py`
   > 主要是用來定期清理已完成的下載清單。程式很短也應該很容易理解。runDailyHousekeeping.sh 是對應的排程自訂程式
 
-#### 畫面示例
-`爬蟲與下載`
-![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-16_234131.png)
-
-`checkNASdownload.py`
-![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-18_131617.png)
-
-`檢查空間並移除舊的檔案`
-![程式示例](https://github.com/spectreConstantine/synology.nas.python/blob/master/2020-06-18_141805.png)
-
 #### 執行環境需求 
 
 >- 此程式需有一個自己客製的文字檔名稱為 nasconfig 的設定檔, 放在 ~/.nas/ 目錄下, 包含帳號密碼  
@@ -88,12 +78,10 @@
  }        
 ```
 
-#### 撰寫心得
+#### 其他參考
 
-> 這整套程式雖然只是運用 Python 下載一些資料，從第一個版本由網路的原始碼 (感謝 scku深紅/scku208@gmail.com) ，從中學習瞭解別人的程式，
-> 到自己研究如何運用 Synology 的 WebAPI，到優化整個模組間的相互運作，到完全能自己掌握程式的風格、調性、模組間的協同合作、類別的建立與使用，
-> 程式除錯等等，實值上算是我在學習 Python 過程中一個練習。中間反覆改了大概有20幾個版本，每天都在嘗試做不同的優化。是個很累但很有收獲的過程。
-> 另一個值得參考的套件也提供大家參考 <https://github.com/N4S4/synology-api>。雖然他的套件很完整，但我自己的已經寫完了，沒有再使用他的。
+> 其他相關的 NAS API git <https://github.com/N4S4/synology-api>。
+> Synology NAS的創意應用 – Download Station <https://www.xfastest.com/thread-221950-1-1.html>。
 
 #### 授權 License 內容
 ![授權內容](https://github.com/spectreConstantine/synology.nas.python/blob/master/LICENSE)
