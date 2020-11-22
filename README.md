@@ -81,6 +81,7 @@
 #### 其他參考
 
 > 其他相關的 NAS API git <https://github.com/N4S4/synology-api>。
+
 > Synology NAS的創意應用 – Download Station <https://www.xfastest.com/thread-221950-1-1.html>。
 
 #### 授權 License 內容
